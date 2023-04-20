@@ -18,7 +18,13 @@ app.use("/users", userRoutes);
 app.use(morgan("tiny"));
 
 connectDatabase().then(() => {
-  app.listen(3001, () => {
-    console.log("Server listening on http://localhost:3001");
+  app.listen(3001, (err) => {
+    if(err){
+      console.log(`connetion error${err}`);
+    }
+    else{
+      console.log("Server listening on http://localhost:3001");
+    }
+    
   });
 });
