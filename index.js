@@ -19,6 +19,6 @@ app.use(morgan("tiny"));
 
 connectDatabase().then(() => {
   app.listen(8080, () => {
-    console.log("Server listening on http://localhost:3001");
+    console.log("Server listening on http://localhost:8080");
   });
 });
