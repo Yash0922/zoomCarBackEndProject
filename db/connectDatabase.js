@@ -5,7 +5,7 @@ mongoose.set("strictQuery", true);
 
 async function connectDatabase() {
   try {
-    await mongoose.connect(config.MONGODB_URL);
+    await mongoose.connect(config.MONGODB_URL,{ useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
     console.log("Connected to database");
   } catch (error) {
     console.log(error);
